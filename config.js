@@ -29,7 +29,7 @@ module.exports = {
     pages: {
       pattern: 'content/pages/*.md'
     },
-    post: {
+    posts: {
       pattern: 'content/posts/**/*.md',
       sortBy: 'date'
     }
