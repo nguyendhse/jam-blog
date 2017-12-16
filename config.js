@@ -30,7 +30,7 @@ module.exports = {
       pattern: 'content/pages/*.md'
     },
     articles: {
-      pattern: 'content/articles/*.md',
+      pattern: 'content/articles/**/*.md',
       sortBy: 'date'
     }
   },

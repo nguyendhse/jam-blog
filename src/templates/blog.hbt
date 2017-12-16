@@ -7,6 +7,7 @@
         {{#each collections.articles}}
         <li>
             <h3>{{this.title}}</h3>
+            <h5>{{this.description}}</h5>
             <article>{{this.contents}}</article>
         </li>
         {{/each}}
