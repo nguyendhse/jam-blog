@@ -708,6 +708,12 @@ metalsmith-static@^0.0.5:
     fs-extra "~0.10.0"
     ncp "~0.5.0"
 
+metalsmith-tags@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/metalsmith-tags/-/metalsmith-tags-2.0.0.tgz#81a09877a703664c4155944dd946b7b8bfab0cfd"
+  dependencies:
+    slug "^0.9.1"
+
 metalsmith-templates@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/metalsmith-templates/-/metalsmith-templates-0.7.0.tgz#09c8e8d53c687c2c22744ccd95f99b501cba89ba"
@@ -871,6 +877,12 @@ slug-component@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/slug-component/-/slug-component-1.1.0.tgz#224290a04591bf9ac08b9c622d3a14f43e3a0df7"
 
+slug@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/slug/-/slug-0.9.1.tgz#af08f608a7c11516b61778aa800dce84c518cfda"
+  dependencies:
+    unicode ">= 0.3.1"
+
 source-map@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.4.4.tgz#eba4f5da9c0dc999de68032d8b4f76173652036b"
@@ -933,6 +945,10 @@ uglify-js@^2.6:
 uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
+
+"unicode@>= 0.3.1":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/unicode/-/unicode-10.0.0.tgz#e5d51c1db93b6c71a0b879e0b0c4af7e6fdf688e"
 
 uniq@^1.0.1:
   version "1.0.1"

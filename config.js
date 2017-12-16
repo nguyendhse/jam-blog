@@ -29,13 +29,19 @@ module.exports = {
     pages: {
       pattern: 'content/pages/*.md'
     },
-    articles: {
-      pattern: 'content/articles/**/*.md',
+    post: {
+      pattern: 'content/posts/**/*.md',
       sortBy: 'date'
     }
   },
   permalinks: {
-    pattern: ':collections/:title'
+    pattern: 'post/:slug',
+    linksets: [
+      {
+        match: { collection: 'pages' },
+        pattern: ':slug'
+      }
+    ]
   },
   assets: { src: dir.source + 'assets', dest: '.' },
   buildDev: devBuild
