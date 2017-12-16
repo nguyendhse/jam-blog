@@ -1,29 +1,30 @@
+const path = require('path');
+//custom-config
+const config = require('./config');
+//built-in-plugins
 const Metalsmith = require('metalsmith'),
   markdown = require('metalsmith-markdown'),
-  templates = require("metalsmith-templates")
-  collections = require('metalsmith-collections')
-  permalinks = require('metalsmith-permalinks');
+  templates = require('metalsmith-templates'),
+  collections = require('metalsmith-collections'),
+  permalinks = require('metalsmith-permalinks'),
+  assets = require('metalsmith-static'),
+  publish = require('metalsmith-publish');
+
+//self-plugins
+const debug = require('./plugins/debug');
 
 Metalsmith(__dirname)
-  .use(collections({
-    pages: {
-      pattern: 'content/pages/*.md'
-    },
-    articles: {
-      pattern: 'content/articles/*.md',
-      sortBy: 'date'
-    }
-  }))
+  .source(path.resolve(__dirname, 'src/content'))
+  .metadata(config.metadata)
+  .use(collections(config.collections))
+  .use(assets(config.assets))
   .use(markdown())
-  .use(permalinks({
-    pattern: ':collections/:title'
-  }))
-  .use(templates({
-    engine: 'handlebars',
-    partials: {
-      header: 'partials/header',
-      footer: 'partials/footer'
-    }
-  }))
+  .use(permalinks(config.permalinks))
+  .use(publish())
+  .use(templates(config.templateConfig))
+  .use(debug(false))
+  .clean(!config.buildDev)
   .destination('./build')
-  .build(err => { if (err) console.log(err) })
+  .build(err => {
+    if (err) console.log(err);
+  });
